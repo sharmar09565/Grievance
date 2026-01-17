@@ -117,12 +117,21 @@ textarea {
     outline: none;
 }
 
+select {
+    padding: 10px;
+    border: 1px solid #d6d6d6;
+    border-radius: 3px;
+    font-size: 14px;
+    outline: none;
+}
+
 textarea {
     resize: none;
 }
 
 input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
     border-color: #0a5fb4;
 }
 
