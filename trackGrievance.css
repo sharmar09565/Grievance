@@ -4,9 +4,8 @@
     box-sizing: border-box;
     font-family: "poppins", sans-serif;
 }
-
 body {
-    background: #f2f4f7;
+    background: #f2f6fb;
 }
 
 /* NAVBAR */
@@ -49,108 +48,78 @@ body {
     margin-left: 16px;
 }
 
+/* FORM */
 .container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-}
-
-.form-card {
-    background: #ffffff;
-    padding: 30px 40px;
-    border-radius: 4px;
-    box-shadow: 0 0 0 1px #e0e0e0;
-}
-
-.form-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 30px;
-}
-
-.form-header .icon {
-    background: #0a5fb4;
-    color: #fff;
-    padding: 6px 8px;
-    border-radius: 3px;
-    font-size: 14px;
-}
-
-.form-header h2 {
-    color: #0a5fb4;
-    font-size: 20px;
-}
-
-form {
     width: 100%;
+    max-width: 550px;
+    justify-self: center;
+    margin: 42.5px 0;
 }
 
-.row {
-    display: flex;
-    gap: 30px;
+.card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+.card h2 {
     margin-bottom: 20px;
-}
-
-.field {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.field.full {
-    margin-bottom: 20px;
+    color: #1f3c88;
 }
 
 label {
-    font-size: 14px;
-    font-weight: 550;
+    display: block;
     margin-bottom: 6px;
-    color: #000;
+    font-weight: 550;
+    color: #333;
 }
 
-input,
-textarea {
+input {
+    width: 100%;
     padding: 10px;
-    border: 1px solid #d6d6d6;
-    border-radius: 3px;
-    font-size: 14px;
-    outline: none;
-}
-
-select {
-    padding: 10px;
-    border: 1px solid #d6d6d6;
-    border-radius: 3px;
-    font-size: 14px;
-    outline: none;
-}
-
-textarea {
-    resize: none;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-    border: 2px solid black;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 button {
-    display: block;
-    margin: 30px auto 0;
+    width: 100%;
+    padding: 11px;
     background: #0a5fb4;
     color: #fff;
     border: none;
-    padding: 12px 28px;
-    font-size: 14px;
-    border-radius: 3px;
+    border-radius: 4px;
+    font-size: 15px;
     cursor: pointer;
 }
 
 button:hover {
     background: #084c90;
 }
+
+.status-card {
+    background: #fffdfd;
+    padding: 20px;
+    border-radius: 8px;
+    display: none;
+}
+
+.status-card h3 {
+    margin-bottom: 10px;
+    color: #1f3c88;
+}
+
+.status-card span {
+    font-weight: bold;
+}
+
+.status-card p {
+    margin-bottom: 6px;
+    color: #333;
+}
+
 
 /* FOOTER */
 footer {
