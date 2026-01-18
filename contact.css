@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+body {
+  background: #eef6fb;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 50px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #0b5394;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.navbar nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #0b5394;
+    font-weight: 500;
+}
+
+.navbar i {
+    font-size: 22px;
+    color: #0b5394;
+    margin-left: 16px;
+}
+
+
+/* CONTACT */
+.contact-section {
+  padding: 40px 60px;
+  margin-top: 50px;
+  margin-bottom: 56px;
+}
+
+.contact-section h2 {
+  justify-self: center;
+  color: #0b5ea8;
+  margin-bottom: 25px;
+}
+
+.card-container {
+  display: flex;
+  justify-self: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+.grievance-card{
+  cursor: pointer;
+}
+
+.contact-card {
+  background: #fff;
+  width: 350px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.card-header {
+  background: #0b5ea8;
+  color: #fff;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #333;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.card-body i {
+  color: #0b5ea8;
+}
+
+
+/* Grievance Cell contact */
+.grievance-section {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #f8fbff;
+  border-radius: 6px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* Header */
+.section-header {
+  background: #0b5ea8;
+  color: #fff;
+  padding: 14px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 6px 6px 0 0;
+}
+
+/* Content Layout */
+.content-wrapper {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Left Card */
+.info-card {
+  height: 50%;
+  flex: 1;
+  background: #fff;
+  padding: 18px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.info-title {
+  font-weight: 600;
+  color: #0b5ea8;
+  margin-bottom: 15px;
+}
+
+.info-card p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.info-card i {
+  color: #0b5ea8;
+}
+
+.info-title a{
+  color: #003c71;
+  font-weight: lighter;
+}
+/* Right Form Card */
+.form-card {
+  flex: 1;
+  background: #fff;
+  padding: 18px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.form-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0b5ea8;
+  margin-bottom: 15px;
+}
+
+.form-card input,
+.form-card textarea {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  resize: none;
+}
+
+.form-card button {
+  background: #0b5ea8;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  display: block;
+  margin-left: auto;
+}
+
+.form-card button:hover {
+  background: #094b86;
+}
+
+.hide{
+    display: none;
+}
+
+/* FOOTER */
+footer {
+    background: #073763;
+    color: #fff;
+    padding: 40px 20px 10px 0;
+}
+
+.footer-grid {
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.footer-grid h4 {
+    margin-bottom: 10px;
+}
+
+.footer-grid a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 6px;
+}
+
+footer p {
+    font-size: 14px;
+}
+.location{
+    margin-left: 200px;
+}
+.quick-links{
+    margin-left: 200px;
+}
+.contact-us{
+    margin-left: 100px;
+}
+.copyright {
+    height: 50px;
+    background-color: #012242;
+    color: #7f97ad;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    padding-top: 16px;
+    position: absolute;
+}
+
