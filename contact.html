@@ -1,146 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us</title>
-  <link rel="stylesheet" href="contact.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="contact.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
+
 <body>
-
-<!-- NAVBAR -->
-<header class="navbar">
+  <!-- NAVBAR -->
+  <header class="navbar">
     <div class="logo">
-        <img src="logo.png" alt="SVIET Logo">
-
+      <img src="logo.png" alt="SVIET Logo" />
     </div>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="index.html#about">About</a>
-        <a href="#">Contact</a>
-        <i class="fa-solid fa-user-circle"></i>
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="#">Contact</a>
+      <i class="fa-solid fa-user-circle"></i>
     </nav>
-</header>
+  </header>
 
-<section class="contact-section">
-  <h2>Contact Us</h2>
+  <section class="contact-section">
+    <h2>Contact Us</h2>
 
-  <div class="card-container">
-
-    <!-- Grievance Cell -->
-    <div class="contact-card grievance-card">
-      <div class="card-header">
-        <i class="fa-solid fa-envelope"></i>
-        <span>Grievance Cell</span>
+    <div class="card-container">
+      <!-- Grievance Cell -->
+      <div class="contact-card grievance-card">
+        <div class="card-header">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Grievance Cell</span>
+        </div>
+        <div class="card-body">
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+            grievance@sviet.ac.in
+          </p>
+          <p>
+            <i class="fa-solid fa-phone"></i>
+            +91 98765 43210
+          </p>
+        </div>
       </div>
-      <div class="card-body">
+
+      <!-- Campus Location -->
+      <div class="contact-card">
+        <div class="card-header">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Campus Location</span>
+        </div>
+        <div class="card-body">
+          <p>
+            <i class="fa-solid fa-location-dot"></i>
+            SVIET, Chandigarh–Patiala Highway, Banur, Punjab 140601
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="grievance-section hide" id="grievance-section">
+    <div class="section-header">Grievance Cell</div>
+
+    <div class="content-wrapper">
+      <!-- Left Info Card -->
+      <div class="info-card">
+        <p class="info-title">
+          <i class="fa-solid fa-pen-to-square"></i>
+          <a href="registerGrievance.html">Register Grievance</a>
+        </p>
+
         <p>
           <i class="fa-solid fa-envelope"></i>
           grievance@sviet.ac.in
         </p>
+
         <p>
           <i class="fa-solid fa-phone"></i>
           +91 98765 43210
         </p>
       </div>
-    </div>
 
-    <!-- Campus Location -->
-    <div class="contact-card">
-      <div class="card-header">
-        <i class="fa-solid fa-location-dot"></i>
-        <span>Campus Location</span>
+      <!-- Right Form Card -->
+      <div class="form-card">
+        <h3>
+          <i class="fa-solid fa-message"></i>
+          Send Us a Message
+        </h3>
+
+        <form>
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email ID" required />
+          <textarea placeholder="Message" rows="4" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
       </div>
-      <div class="card-body">
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="location">
+        <h4>Locate Us</h4>
         <p>
-          <i class="fa-solid fa-location-dot"></i>
-          SVIET, Chandigarh–Patiala Highway, Banur, Punjab 140601
+          Village- Ramnagar Near<br />
+          Banur, Tehsil- Rajpura,<br />
+          District- Patiala,<br />
+          State- Punjab
         </p>
       </div>
-    </div>
 
-  </div>
-</section>
+      <div class="quick-links">
+        <h4>Quick links</h4>
+        <a href="index.html#about">About</a>
+        <a href="#">Contact</a>
+        <a href="rules.html">Rules & policies</a>
+      </div>
 
-<section class="grievance-section hide" id="grievance-section">
-
-  <div class="section-header">
-    Grievance Cell
-  </div>
-
-  <div class="content-wrapper">
-
-    <!-- Left Info Card -->
-    <div class="info-card">
-      <p class="info-title">
-        <i class="fa-solid fa-pen-to-square"></i>
-        <a href="registerGrievance.html">Register Grievance</a>
-      </p>
-
-      <p>
-        <i class="fa-solid fa-envelope"></i>
-        grievance@sviet.ac.in
-      </p>
-
-      <p>
-        <i class="fa-solid fa-phone"></i>
-        +91 98765 43210
-      </p>
-    </div>
-
-    <!-- Right Form Card -->
-    <div class="form-card">
-      <h3>
-        <i class="fa-solid fa-message"></i>
-        Send Us a Message
-      </h3>
-
-      <form>
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email ID" required>
-        <textarea placeholder="Message" rows="4" required></textarea>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <div class="footer-grid">
-        <div class="location">
-            <h4>Locate Us</h4>
-            <p>Village- Ramnagar Near<br>
-               Banur, Tehsil- Rajpura,<br>
-               District- Patiala,<br>
-               State- Punjab</p>
-        </div>
-
-        <div class="quick-links">
-            <h4>Quick links</h4>
-            <a href="index.html#about">About</a>
-            <a href="#">Contact</a>
-            <a href="#">Rules & policies</a>
-        </div>
-
-        <div class="contact-us">
-            <h4>Contact Us</h4>
-            <p>+91-94652 33333</p>
-            <p>Toll Free: 1800 1200</p>
-            <p>info@sviet.ac.in</p>
-            <p>tp@sviet.ac.in</p>
-            <p>hr@sviet.ac.in</p>
-        </div>
+      <div class="contact-us">
+        <h4>Contact Us</h4>
+        <p>+91-94652 33333</p>
+        <p>Toll Free: 1800 1200</p>
+        <p>info@sviet.ac.in</p>
+        <p>tp@sviet.ac.in</p>
+        <p>hr@sviet.ac.in</p>
+      </div>
     </div>
 
     <div class="copyright">
-        Copyright © 2025 Swami Vivekanand Institute of Engineering and Technology.
-        All Rights Reserved.
+      Copyright © 2025 Swami Vivekanand Institute of Engineering and
+      Technology. All Rights Reserved.
     </div>
-</footer>
+  </footer>
 
-<script src="contact.js"></script>
+  <script src="contact.js"></script>
 </body>
+
 </html>

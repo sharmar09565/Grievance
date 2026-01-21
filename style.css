@@ -194,6 +194,8 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
     margin-bottom: 20px;
+    justify-items: center;
+    align-content: center;
 }
 
 .footer-grid h4 {
@@ -210,15 +212,7 @@ footer {
 footer p {
     font-size: 14px;
 }
-.location{
-    margin-left: 200px;
-}
-.quick-links{
-    margin-left: 200px;
-}
-.contact-us{
-    margin-left: 100px;
-}
+
 .copyright {
     height: 50px;
     background-color: #012242;
