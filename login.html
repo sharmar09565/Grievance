@@ -1,52 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Track Grievance</title>
-    <link rel="stylesheet" href="trackGrievance.css">
+    <title>Login to Grievance Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
+
     <!-- NAVBAR -->
     <header class="navbar">
         <div class="logo">
             <img src="logo.png" alt="SVIET Logo">
-
         </div>
         <nav>
             <a href="index.html">Home</a>
             <a href="index.html#about">About</a>
             <a href="contact.html">Contact</a>
-            <a href="login.html"><i class="fa-solid fa-user-circle"></i></a>
+            <i class="fa-solid fa-user-circle"></i>
         </nav>
     </header>
 
-    <!-- FORM -->
-    <div class="container">
-        <div class="card">
-            <h2>🔍 Track Grievance</h2>
-
-            <form>
-                <label>Enter Grievance ID</label>
-                <input type="text" placeholder="Enter Grievance ID">
-
-                <label>Registered Email / Mobile</label>
-                <input type="text" placeholder="Registered Email / Mobile">
-
-                <button type="submit">Track Status</button>
-            </form>
+    <!-- LOGIN AREA -->
+    <section class="login-area">
+        <div class="login-header">
+            <h2>Login to Grievance Portal</h2>
         </div>
 
-        <div class="status-card">
-            <h3>ℹ️ Status: <span>Under Review</span></h3>
-            <p><b>Last Updated:</b> 12-Apr-2024</p>
-            <p><b>Remarks:</b> "Your grievance is being reviewed by the committee."</p>
-        </div>
-    </div>
+        <div class="login-form">
+            <div class="role-buttons">
+                <button class="role active">Student</button>
+                <button class="role">Committee Member</button>
+                <button class="role">Admin</button>
+            </div>
 
+            <input type="text" placeholder="Email / Username" />
+            <input type="password" placeholder="Password" />
+
+            <div class="forgot">
+                <a href="#">Forgot Password?</a>
+            </div>
+
+            <div class="message" id="loginMessage"></div>
+
+            <div class="login-wrapper">
+                <button class="login-btn">Login</button>
+                <button class="arrow-btn" onclick="toggleDropdown()">▼</button>
+
+                <div class="dropdown" id="dropdown">
+                    <a href="#">Signup</a>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- FOOTER -->
     <footer>
         <div class="footer-grid">
@@ -80,7 +89,7 @@
             All Rights Reserved.
         </div>
     </footer>
-
+    <script src="login.js"></script>
 </body>
 
 </html>
