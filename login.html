@@ -37,10 +37,58 @@
                 <button class="role"><i class="fas fa-user-tie"></i> Admin</button>
             </div>
 
-            <input type="text" placeholder="Email / Username" />
-            <input type="password" placeholder="Password" />
+            <div id="loginInputs">
+                <input type="text" placeholder="Email / Username" id="emailInput" />
+                <input type="password" placeholder="Password" id="passwordInput" />
+            </div>
 
-            <div class="forgot">
+            <div id="signupFields" style="display: none;">
+                <h3 style="margin:0 0 8px 0">Student Signup</h3>
+
+                <div class="signup-section">
+                    <div class="signup-section-label">Personal Information</div>
+                    <input type="text" id="fullName" placeholder="Full Name" />
+                    <input type="text" id="universityRoll" placeholder="University Roll (numbers only)" />
+                    <input type="text" id="admissionRoll" placeholder="Admission Roll (alphanumeric)" />
+                </div>
+
+                <div class="signup-section">
+                    <div class="signup-section-label">Academic Details</div>
+                    <select id="department">
+                        <option value="">Select Department</option>
+                        <option value="cse">CSE</option>
+                        <option value="ece">ECE</option>
+                        <option value="me">ME</option>
+                        <option value="ce">CE</option>
+                        <option value="mca">MCA</option>
+                        <option value="mtech">MTech</option>
+                    </select>
+                    <input type="text" id="batch" placeholder="Batch (e.g., 2022-2026)" />
+                    <select id="semester">
+                        <option value="">Select Semester</option>
+                    </select>
+                </div>
+
+                <div class="signup-section">
+                    <div class="signup-section-label">Security</div>
+                    <input type="password" id="createPassword" placeholder="Create Password" />
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" />
+                    <div class="password-requirements" id="passwordReq" style="display:none;color:#b00;font-size:0.9rem;margin-top:6px;">
+                        <div id="pr-length">✗ At least 8 characters</div>
+                        <div id="pr-upper">✗ One uppercase letter</div>
+                        <div id="pr-digit">✗ One numeric digit</div>
+                        <div id="pr-match">✗ Passwords match</div>
+                    </div>
+                </div>
+
+                <div class="signup-section">
+                    <div class="signup-section-label">Contact Information</div>
+                    <input type="text" id="mobile" placeholder="Mobile Number" />
+                    <input type="email" id="signupEmail" placeholder="Email ID" />
+                </div>
+            </div>
+
+            <div class="forgot" id="forgotContainer">
                 <a href="#" id="forgotLink">Forgot Password?</a>
             </div>
 
@@ -51,7 +99,7 @@
                 <button class="arrow-btn" onclick="toggleDropdown()">▼</button>
 
                 <div class="dropdown" id="dropdown">
-                    <a href="#">Signup</a>
+                    <a href="#" id="signupLink">Signup</a>
                 </div>
             </div>
         </div>
