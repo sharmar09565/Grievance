@@ -34,11 +34,11 @@
                 <div class="row">
                     <div class="field">
                         <label>First Name</label>
-                        <input type="text" placeholder="First Name" />
+                        <input type="text" placeholder="First Name" onkeypress="return /[a-zA-Z]/i.test(event.key)"/>
                     </div>
                     <div class="field">
                         <label>Last Name</label>
-                        <input type="text" placeholder="Last Name" />
+                        <input type="text" placeholder="Last Name" onkeypress="return /[a-zA-Z]/i.test(event.key)" />
                     </div>
                 </div>
 
@@ -49,14 +49,14 @@
                     </div>
                     <div class="field">
                         <label>University Roll Number</label>
-                        <input type="text" placeholder="University Roll Number" />
+                        <input type="text" placeholder="University Roll Number" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="field">
                         <label>Mobile Number</label>
-                        <input type="tel" placeholder="Mobile Number" />
+                        <input type="tel" placeholder="Mobile Number" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
                     </div>
                     <div class="field">
                         <label>Email id</label>
