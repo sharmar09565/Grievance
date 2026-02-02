@@ -124,6 +124,21 @@ body {
   background: #0b5e99;
   color: #fff;
   cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.role i {
+  font-size: 16px;
+}
+
+.role:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(11, 94, 153, 0.3);
 }
 
 .role.active {
