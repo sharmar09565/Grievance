@@ -34,39 +34,39 @@
                 <div class="row">
                     <div class="field">
                         <label>First Name</label>
-                        <input type="text" placeholder="First Name" onkeypress="return /[a-zA-Z]/i.test(event.key)"/>
+                        <input type="text" id="firstName" placeholder="First Name" onkeypress="return /[a-zA-Z]/i.test(event.key)"/>
                     </div>
                     <div class="field">
                         <label>Last Name</label>
-                        <input type="text" placeholder="Last Name" onkeypress="return /[a-zA-Z]/i.test(event.key)" />
+                        <input type="text" id="lastName" placeholder="Last Name" onkeypress="return /[a-zA-Z]/i.test(event.key)" />
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="field">
                         <label>Admission Number</label>
-                        <input type="text" placeholder="Admission Number" />
+                        <input type="text" id="admissionNo" placeholder="Admission Number" />
                     </div>
                     <div class="field">
                         <label>University Roll Number</label>
-                        <input type="text" placeholder="University Roll Number" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
+                        <input type="text" id="rollNo" placeholder="University Roll Number" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="field">
                         <label>Mobile Number</label>
-                        <input type="tel" placeholder="Mobile Number" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
+                        <input type="tel" id="mobile" placeholder="Mobile Number" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
                     </div>
                     <div class="field">
                         <label>Email id</label>
-                        <input type="email" placeholder="Email id" />
+                        <input type="email" id="email" placeholder="Email id" />
                     </div>
                 </div>
 
                 <div class="field full">
                     <label>Department</label>
-                    <select>
+                    <select id="department">
                         <option value="">Select Department</option>
                         <option value="cse">
                             Department of Computer Science & Engineering
@@ -90,7 +90,7 @@
 
                 <div class="field full">
                     <label>Description</label>
-                    <textarea rows="4" placeholder="Description"></textarea>
+                    <textarea id="description" rows="4" placeholder="Description"></textarea>
                 </div>
 
                 <button type="submit">Submit Grievance</button>
@@ -133,6 +133,7 @@
             Technology. All Rights Reserved.
         </div>
     </footer>
+    <script src="registerGrievance.js"></script>
 </body>
 
 </html>
