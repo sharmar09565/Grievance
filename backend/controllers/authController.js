@@ -2,6 +2,23 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
+// Store OTPs in memory (in production, use Redis or database)
+const otpStore = {};
+
+// Generate random OTP
+function generateOtp() {
+    return Math.floor(100000 + Math.random() * 900000).toString();
+}
+
+// Generate reset token
+function generateResetToken() {
+    return jwt.sign(
+        { timestamp: Date.now() },
+        process.env.JWT_SECRET || 'secret',
+        { expiresIn: '10m' }
+    );
+}
+
 exports.register = async (req, res) => {
     try {
         const { name, email, password, role } = req.body;
@@ -55,6 +72,149 @@ exports.login = async (req, res) => {
             token,
             user: { id: user.id, name: user.name, email: user.email, role: user.role }
         });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+};
+
+// ============ FORGOT PASSWORD METHODS ============
+
+exports.forgotPassword = async (req, res) => {
+    try {
+        const { email } = req.body;
+
+        if (!email) {
+            return res.status(400).json({ message: 'Please provide email' });
+        }
+
+        // Check if user exists
+        const user = await User.findByEmail(email);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // Generate OTP and reset token
+        const otp = generateOtp();
+        const resetToken = generateResetToken();
+
+        // Store OTP in memory (expires in 5 minutes)
+        otpStore[email] = {
+            otp,
+            resetToken,
+            expiresAt: Date.now() + 5 * 60 * 1000
+        };
+
+        // In production, send OTP via email
+        console.log(`OTP for ${email}: ${otp}`);
+
+        res.json({ 
+            message: 'OTP sent to your email',
+            resetToken // For development, included in response
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+};
+
+exports.verifyOtp = async (req, res) => {
+    try {
+        const { email, otp, resetToken } = req.body;
+
+        if (!email || !otp) {
+            return res.status(400).json({ message: 'Please provide email and OTP' });
+        }
+
+        // Check if OTP exists and is valid
+        const otpData = otpStore[email];
+        if (!otpData) {
+            return res.status(400).json({ message: 'OTP not found or expired' });
+        }
+
+        if (Date.now() > otpData.expiresAt) {
+            delete otpStore[email];
+            return res.status(400).json({ message: 'OTP expired' });
+        }
+
+        if (otpData.otp !== otp) {
+            return res.status(400).json({ message: 'Invalid OTP' });
+        }
+
+        res.json({ message: 'OTP verified successfully' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+};
+
+exports.resendOtp = async (req, res) => {
+    try {
+        const { email } = req.body;
+
+        if (!email) {
+            return res.status(400).json({ message: 'Please provide email' });
+        }
+
+        // Check if user exists
+        const user = await User.findByEmail(email);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // Generate new OTP and reset token
+        const otp = generateOtp();
+        const resetToken = generateResetToken();
+
+        // Store OTP in memory (expires in 5 minutes)
+        otpStore[email] = {
+            otp,
+            resetToken,
+            expiresAt: Date.now() + 5 * 60 * 1000
+        };
+
+        // In production, send OTP via email
+        console.log(`OTP resent for ${email}: ${otp}`);
+
+        res.json({ 
+            message: 'OTP resent to your email',
+            resetToken // For development, included in response
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+};
+
+exports.resetPassword = async (req, res) => {
+    try {
+        const { email, newPassword } = req.body;
+
+        if (!email || !newPassword) {
+            return res.status(400).json({ message: 'Please provide email and new password' });
+        }
+
+        // Validate password strength
+        if (newPassword.length < 8) {
+            return res.status(400).json({ message: 'Password must be at least 8 characters' });
+        }
+
+        // Find user
+        const user = await User.findByEmail(email);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // Hash new password
+        const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+        // Update user password
+        await User.updatePassword(email, hashedPassword);
+
+        // Clear OTP
+        delete otpStore[email];
+
+        res.json({ message: 'Password reset successfully' });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Server error', error: error.message });

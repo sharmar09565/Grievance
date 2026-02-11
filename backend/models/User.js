@@ -19,6 +19,15 @@ class User {
         const [rows] = await db.execute('SELECT id, name, email, role FROM users');
         return rows;
     }
+
+    // ============ UPDATE PASSWORD METHOD ============
+    static async updatePassword(email, hashedPassword) {
+        const [result] = await db.execute(
+            'UPDATE users SET password = ? WHERE email = ?',
+            [hashedPassword, email]
+        );
+        return result.affectedRows;
+    }
 }
 
 module.exports = User;
