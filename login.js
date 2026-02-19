@@ -574,15 +574,13 @@ if (loginBtn) {
         }, 1000);
       } else {
         if (messageDiv) {
-          messageDiv.textContent = data.message || "Login failed";
-          messageDiv.classList.add("error");
+          showInlineMessageWithTimeout(messageDiv, data.message || "Login failed", 'error', 2000);
         }
       }
     } catch (error) {
       console.error(error);
       if (messageDiv) {
-        messageDiv.textContent = "Server error. Is backend running?";
-        messageDiv.classList.add("error");
+        showInlineMessageWithTimeout(messageDiv, "Unable to contact server. Please try again later.", 'error', 2000);
       }
     }
   });
@@ -596,6 +594,22 @@ function showInlineMessage(element, text, type = 'info') {
     element.classList.add(type === 'error' ? 'error' : 'success');
   }
   return;
+}
+
+// Clear inline message immediately
+function clearInlineMessage(element) {
+  if (!element) return;
+  element.textContent = '';
+  element.className = '';
+}
+
+// Show an inline message and optionally auto-hide after `timeout` ms (default 2000ms)
+function showInlineMessageWithTimeout(element, text, type = 'info', timeout = 2000) {
+  showInlineMessage(element, text, type);
+  if (!element) return;
+  setTimeout(() => {
+    clearInlineMessage(element);
+  }, timeout);
 }
 
 // Toggle visibility of signup fields based on login button text
